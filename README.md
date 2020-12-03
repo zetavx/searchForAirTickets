@@ -19,18 +19,18 @@ searchForAirTickets
 
 # PASOS PARA LA INSTALACIÓN 
 - Clonar los repositorios https://git-scm.com/docs/git-clone (aqui te enseña como...)
-- ingresa la carpeta de backend por consola o terminal
-> composer install 
-> php artisan key:generate
-> **configura tu ENV para conectarse a database**
-> php artisan migrate
-> php artisan db:seed
+> ingresa la carpeta de backend por consola o terminal
+- composer install 
+- php artisan key:generate
+- **configura tu ENV para conectarse a database**
+- php artisan migrate
+- php artisan db:seed
 > php artisan serve **http://127.0.0.1:8000**
--con eso ya tienes el backend arriba
+- con eso ya tienes el backend arriba
 - ingresa a la carpeta frontend por consola o terminal
-> npm install
-> npm run serve
-> nom run prod **para producción**
+- npm install
+> npm run serve **http://localhost:8080/**
+- nom run prod **para producción**
 
 # Requisitos
 - PHP 74
