@@ -13,6 +13,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        //create 10 users
+        \App\Models\airline::factory(10)->create()->each(function ($airline) {
+            \App\Models\ticket::factory(3)->create(['id_air' => $airline->id]);
+        });
+        /*for ($i = 0; $i < 5; $i++) {
+            $this->call([
+                airlinesSeeder::class,
+                ticketsSeeder::class,
+            ]);
+        }*/
     }
 }
