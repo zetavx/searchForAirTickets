@@ -10,6 +10,10 @@ class ticketController extends Controller
     {
         $alert = '';
         $tickets = [];
+
+        $ticket = new ticket();
+        $ticket->getByAirline();
+        $tickets = $ticket->tickets;
         return response(
             [
                 'response' => true,
@@ -22,12 +26,16 @@ class ticketController extends Controller
     public function show($ticketId)
     {
         $alert = '';
-        $tickets = [];
+        $ticket = null;
+
+        $ticket = new ticket(['id_ticket' => $ticketId]);
+        $ticket->getDetailByIdTicket();
+        $ticket = $ticket->ticket;
         return response(
             [
                 'response' => true,
                 'alert' => $alert,
-                'tickets' => $tickets
+                'ticket' => $ticket
             ]
         );
     }
