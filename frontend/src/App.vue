@@ -5,7 +5,7 @@
       color="primary"
       dark
     >
-      <div class="d-flex align-center">
+      <div class="d-flex align-center" @click="goHome()">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -28,33 +28,36 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        href="https://github.com/zetavx/searchForAirTickets"
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">GitHub</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
   },
 
   data: () => ({
     //
   }),
+  methods:{
+    goHome(){
+      this.$router.push('/');
+    }
+  }
 };
 </script>
